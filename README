@@ -1,0 +1,33 @@
+SBL Tracker - a tool to keep track of company's IP's listed at SpamHaus
+
+INTRO
+
+This is a quick and dirty web-based app to help ISP's abuse team keep track 
+of IP's listed at SpamHaus: it fetches entries from SBL and stores them in 
+the local DB allowing to associate an entry with a customer or company's 
+sub-divisions, add comments, etc.
+
+REQUIREMENTS
+
+PHP 5.3.x with mysqli
+MySQL 5.x
+may work with other PHP versions, but hasn't been tested
+
+INSTALLATION
+
+1) upload the files to the web server
+2) create a database
+3) use the create-table.sql SQL file to create tables
+4) edit config.php and supply the MySQL connection details, 
+   link to fetch SBL entries and other info
+5) create ACL's in .htaccess as the app doesn't provide any authentication
+
+TODO
+
+At the moment I have no plans to develop it further,
+initially it was planned to add several other black lists.
+
+CONTACTS
+
+You can reach me at rustam.tsurik@gmail.com should you have any questions,
+bug reports, suggestions on how to improve the app, etc.
