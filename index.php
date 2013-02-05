@@ -167,8 +167,14 @@ function show_comment(bl_id){
       echo "  <li>\n";
       echo "    <div class=\"rbl_entry\">\n";
       echo "    <span class=\"idx-tab\"><a href=\"#\" onclick=\"show_comment('".$row["rbl_id"]."');\">" . $row["rbl_id"] . "</a></span>\n";
-      echo "    <span>" . $row["id"] . "</span>\n";
-      echo "    <span class=\"ip-tab\"&nbsp;>" . $row["ip_range"] . "</span>\n";
+
+      if (preg_match ("/^SBL/i", $row["id"])) {
+        echo "<span><a href=\"http://www.spamhaus.org/sbl/query/" . $row["id"] . "\"> " . $row["id"] . "</a></span>";
+      } else {
+        echo "    <span>" . $row["id"] . "</span>\n";
+      }
+
+      echo "    <span class=\"ip-tab\">&nbsp;" . $row["ip_range"] . "</span>\n";
       echo "    <span class=\"server-tab\">&nbsp;" . $row["server_name"]. "</span>\n"; // server name
       echo "    <span>&nbsp;" . $row["brand"] . "</span>\n";
       echo "    <span>&nbsp;" . $row["client_id"] . "</span>\n"; // client id
